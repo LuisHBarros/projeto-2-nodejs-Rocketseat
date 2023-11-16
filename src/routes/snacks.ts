@@ -28,7 +28,7 @@ export async function snacksRoutes(app: FastifyInstance) {
   });
 
   //route for create a snack
-  app.post("/", { preHandler: [CheckSessionIdExists] }, async (req, res) => {
+  app.post("/", async (req, res) => {
     const createSnackBodySchema = z.object({
       name: z.string(),
       description: z.string(),
